@@ -1,0 +1,21 @@
+.header {
+  background-color: rgba(122, 201, 253, 0.562);
+  border-bottom: 2px solid rgb(43, 168, 252);
+  overflow-y: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+}
+
+@media only screen and (min-width: 600px) {
+  li {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  ul {
+    text-align: right;
+  }
+}
