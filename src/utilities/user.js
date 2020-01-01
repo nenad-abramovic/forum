@@ -1,6 +1,6 @@
 let userData = window.localStorage.getItem('user');
 
-let user = userData === 'null' ? {} : JSON.parse(userData);
+let user = userData === null ? {} : JSON.parse(userData);
 
 export const getUser = () => {
   return user;

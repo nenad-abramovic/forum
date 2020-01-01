@@ -1,0 +1,22 @@
+.form {
+  padding: 5px;
+}
+
+.infoMessage {
+  font-size: 0.8em;
+}
+
+.input {
+  padding: 5px;
+  width: 100%;
+  border: 0;
+  background-color: transparent;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.76);
+  margin-bottom: 5px;
+}
+
+.inputBtn {
+  margin-top: 5px;
+  padding: 5px;
+  width: 100%;
+}

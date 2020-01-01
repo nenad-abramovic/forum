@@ -6,7 +6,7 @@ export const GuestNavigation = () => {
     <nav>
       <ul>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/register">Register</Link></li>
+        <li><Link to="/registration">Register</Link></li>
         <li><Link to="/login">Log In</Link></li>
       </ul>
     </nav>
