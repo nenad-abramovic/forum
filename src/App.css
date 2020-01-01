@@ -32,13 +32,11 @@ div {
   float: left;
 }
 
-/* For mobile phones: */
 [class*="col-"] {
   width: 100%;
 }
 
 @media only screen and (min-width: 600px) {
-  /* For tablets: */
   .col-s-1 {width: 8.33%;}
   .col-s-2 {width: 16.66%;}
   .col-s-3 {width: 25%;}
@@ -54,7 +52,6 @@ div {
 }
 
 @media only screen and (min-width: 768px) {
-  /* For desktop: */
   .col-1 {width: 8.33%;}
   .col-2 {width: 16.66%;}
   .col-3 {width: 25%;}

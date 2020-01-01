@@ -14,7 +14,7 @@ export const Footer = () => {
       </label>
       </div>
       <div className="col-2 col-s-2">
-      <p className={styles.toTop} onClick={e => window.scrollTo(0, 0)}>To Top</p>
+      <p className={styles.toTop} onClick={() => window.scrollTo(0, 0)}>To Top</p>
       </div>
     </footer>
   );

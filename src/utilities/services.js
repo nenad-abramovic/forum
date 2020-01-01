@@ -57,8 +57,7 @@ export const sendMessage = (username, topic_id, message) => {
       username,
       topic_id,
       message
-    }
-    )
+    })
   })
     .then(res => res.json());
 }
@@ -77,8 +76,7 @@ export const addNewTopic = (user_id, title) => {
     body: JSON.stringify({
       user_id,
       title
-    }
-    )
+    })
   })
     .then(res => res.json());
 }
