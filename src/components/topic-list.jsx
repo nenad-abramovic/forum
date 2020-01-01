@@ -13,10 +13,39 @@ export const TopicList = () => {
           setTopics(data.topics);
         }
       })
-  }, [])
+  }, []);
+
+  const handleClick = (e) => {
+    e.target.textContent = (e.target.textContent === '↑') ? '↓' : '↑';
+    let tmp = [...topics];
+    setTopics(tmp.reverse());
+  };
+
+  const handleChange = (e) => {
+    let tmp = [...topics];
+
+    switch(e.target.value) {
+      case 'date-created':
+        setTopics(tmp.sort((a, b) => a.timestamp - b.timestamp));
+        break;
+      case 'last-comment':
+        break;
+      case 'number-of-comments':
+        break;
+      default:
+        console.log('Something went wrong!');
+    }
+  }
 
   return (
     <section>
+      <h2>Topics</h2>
+      <select onChange={handleChange}>
+        <option value="date-created">Date Created</option>
+        <option value="last-comment">Last Commented</option>
+        <option value="number-of-comments">Number of Comments</option>
+      </select>
+      <button onClick={handleClick}>↑</button>
       <ul>
         {
           topics.map(topic => (
@@ -24,7 +53,7 @@ export const TopicList = () => {
             <Link key={topic.topic_id} to={{
               pathname:`/topic/${topic.topic_id}`,
               state: { topic }
-            }}>{topic.title} - {new Date(topic.timestamp).toLocaleString()} [{}]</Link>
+            }}>{topic.title.toString()} - {new Date(topic.timestamp).toLocaleString()} [{}]</Link>
           </li>
           ))
         }

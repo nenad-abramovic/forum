@@ -15,7 +15,7 @@ export const Header = () => {
   }, []);
 
   return (
-    <header id="top" className={styles.header}>
+    <header className={styles.header}>
       <div className="col-s-8 col-8">
         <h1><Link to="/">Forum</Link></h1>
       </div>

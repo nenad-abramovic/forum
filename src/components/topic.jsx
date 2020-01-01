@@ -30,7 +30,7 @@ export const Topic = ({ location }) => {
 
   return (
     <section>
-  <h3>{location.state.topic.title}</h3>
+  <h3>{location.state.topic.title.toString()}</h3>
   <p>Created on: {new Date(location.state.topic.timestamp).toLocaleString()}</p>
   {
     messages.map(message => <Message key={message.message_id} message={message} />)

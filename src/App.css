@@ -21,7 +21,6 @@ html {
 :focus {
   border: 1px dashed black;
   outline: 1px dashed black;
-  padding: 1px;
 }
 
 ::placeholder {

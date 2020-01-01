@@ -6,8 +6,8 @@ export const Message = ({ message }) => {
   
   return (
     <div className={styles.message}>
-      <p>{message.username}</p>
-      <p>{message.message}</p>
+      <p>{message.username.toString()}</p>
+      <p>{message.message.toString()}</p>
       <p>{datetime.toLocaleString()}</p>
     </div>
   );

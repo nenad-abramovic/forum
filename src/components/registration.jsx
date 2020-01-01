@@ -19,7 +19,6 @@ export const Registration = ({ history }) => {
     getAllUsers()
       .then(data => {
         if(data.success === true) {
-          console.log(data);
           setAllUsers(data.users);
         }
       })
@@ -36,7 +35,6 @@ export const Registration = ({ history }) => {
 
     registerUser(userData)
       .then(data => {
-        console.log('aaa');
         if(data.success === true) {
           setUser(data.user);
           history.push('/topiclist');
