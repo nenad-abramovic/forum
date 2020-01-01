@@ -13,7 +13,7 @@ export const UserNavigation = () => {
   return (
     <nav>
       <ul>
-        <li><Link to="/">Home</Link></li>
+        <li><Link to="/topiclist">Home</Link></li>
         <li><Link to={`/profile/${loggedUser.user_id}`}>Profile</Link></li>
         <li><Link to="/" onClick={handleClick}>Log Out</Link></li>
       </ul>

@@ -3,17 +3,32 @@
   box-sizing: border-box;
   margin: 0;
 }
+
 body {
   background-color: rgb(188, 228, 255);
   margin: 0 auto;
   max-width: 1000px;
 }
+
 html {
   background-color: rgb(43, 168, 252);
 }
+
 #root {
   width: 100%;
 }
+
+:focus {
+  border: 1px dashed black;
+  outline: 1px dashed black;
+  padding: 1px;
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.651);
+}
+
+
 div {
   float: left;
 }

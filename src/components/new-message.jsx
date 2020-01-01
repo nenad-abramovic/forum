@@ -22,9 +22,10 @@ export const NewMessage = ({ topic_id, setClick }) => {
 
   return (
     <form>
+      <h4>New Message</h4>
+      <p>{infoMessage}</p>
       <label htmlFor="message">Message:</label>
       <input type="text" placeholder="Enter message" value={message} onChange={e => setMessage(e.target.value)} />
-      <p>{infoMessage}</p>
       <input type="submit" value="Send" onClick={handleClick} />
     </form>
   );

@@ -17,8 +17,8 @@ export const Content = () => {
           return (
             <>
               <div className="col-3 col-s-4">
-                <Registration />
-                <Login />
+                <Registration {...props} />
+                <Login {...props} />
               </div>
               <div className="col-9 col-s-8">
                 <TopicList />
@@ -31,8 +31,8 @@ export const Content = () => {
         <ProtectedRoute path="/topiclist" render={(props) => {
           return (
             <>
-              <TopicList />
-              <NewTopic />
+              <TopicList {...props} />
+              <NewTopic {...props} />
             </>
           );
         }} />
