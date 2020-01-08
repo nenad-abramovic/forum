@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { loginUser } from '../utilities/services';
 import { setUser } from '../utilities/user';
+import styles from './login.module.css';
 
 export const Login = ({ history }) => {
   const [username, setUsername] = useState('');
@@ -24,7 +25,7 @@ export const Login = ({ history }) => {
   }
 
   return (
-    <form>
+    <form className={styles.form}>
       <h2>Login</h2>
       <p>{infoMessage}</p>
       <label htmlFor="login-username">Username:</label>

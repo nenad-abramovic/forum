@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { setUser, getUser } from '../utilities/user';
 
 export const UserNavigation = () => {
-
   const handleClick = () => {
     setUser({});
   };

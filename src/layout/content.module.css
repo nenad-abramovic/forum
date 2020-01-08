@@ -1,5 +1,7 @@
 .main {
   overflow: auto;
   padding: 10px;
-  background-color: rgba(122, 201, 253, 0.562);
+  /* background-color: rgba(122, 201, 253, 0.562); */
+  background-color: #EFEEEE;
+  min-height: calc(100vh - 121px);
 }

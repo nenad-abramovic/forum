@@ -38,7 +38,7 @@ export const TopicList = () => {
   }
 
   return (
-    <section>
+    <section className={styles.topicList}>
       <h2>Topics</h2>
       <select onChange={handleChange}>
         <option value="date-created">Date Created</option>

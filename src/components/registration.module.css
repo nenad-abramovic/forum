@@ -1,5 +1,9 @@
 .form {
+  background-color: #EFEEEE;
   padding: 5px;
+  border-radius: 12px;
+  box-shadow: 6px 6px 26px 0 rgba(209, 205, 199, 1), -6px -6px 26px 0 rgba(255, 255, 255, 1);
+  border: 1px solid rgba(255, 255, 255, 0.20);
 }
 
 .infoMessage {
@@ -11,7 +15,7 @@
   width: 100%;
   border: 0;
   background-color: transparent;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.76);
+  /* border-bottom: 2px solid rgba(0, 0, 0, 0.76); */
   margin-bottom: 5px;
 }
 
@@ -22,18 +26,19 @@
 }
 
 .fieldset {
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  border: 0;
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.151);
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.295);
+  /* background-color: rgba(0, 0, 0, 0.151); */
+  /* box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.295); */
 }
 
 .legend {
   padding: 10px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 10px;
   width: 100%;
   text-align: center;
-  background-color: rgb(43, 168, 252);
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.295);
+  /* background-color: rgb(43, 168, 252); */
+  /* box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.295); */
 }
