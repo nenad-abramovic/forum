@@ -1,29 +1,35 @@
 .footer {
-  background-color: rgba(122, 201, 253, 0.562);
-  border-top: 2px solid rgb(43, 168, 252);
-  overflow-y: auto;
+  background-color: rgb(12, 12, 12);
+  border-radius: 10px;
+ display: flex;
+ justify-content: space-between;
   padding: 10px;
-  text-align: center;
+  align-items: center;
+  margin: 1em;
+  border: 1px solid rgba(255, 255, 255, 0.20);
+
 }
 
-.register,
-.toTop {
-  color: black;
-  text-decoration: none;
-}
 
-.register:hover,
-.toTop:hover {
+.greenLink:hover,
+.yellowLink:hover {
   text-decoration: underline;
   cursor: pointer;
 }
 
-@media only screen and (min-width: 600px) {
-  .register {
-    float: left;
-  }
-  
-  .toTop {
-    float: right;
-  }
+.greenLink {
+  color: rgb(5, 248, 5);
+  text-decoration: none;
+}
+
+.navigation li .greenLink:hover {
+  text-shadow: 0 0 10px rgb(5, 248, 5);
+}
+.yellowLink {
+  color: yellow;
+  text-decoration: none;
+}
+
+.navigation li .yellowLink:hover {
+  text-shadow: 0 0 10px yellow;
 }

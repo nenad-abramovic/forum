@@ -1,16 +1,12 @@
 .container {
-  display: flex;
-  align-items: flex-end;
-}
-
-.container > * {
-  margin-right: 0.5em;
+  padding: 1em;
 }
 
 .container input {
   background-color: transparent;
   /* border: 1px solid rgba(255, 255, 255, 0.20); */
   padding: 0.5em;
+  margin-right: 1em;
 }
 
 .errorMsg {
@@ -18,7 +14,9 @@
 }
 
 .redInput {
+  color: red;
   border: 1px solid rgb(255, 0, 0);
+  flex-grow: 1;
 }
 
 .redInput::placeholder {
@@ -41,4 +39,9 @@
 .greenInput:hover {
   cursor: pointer;
   background-color: rgba(5, 248, 5, 0.363);
+}
+
+.container div {
+  display: flex;
+  justify-content: flex-end;
 }

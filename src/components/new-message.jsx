@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { sendMessage } from '../utilities/services';
 import { getUser } from '../utilities/user';
+import styles from './new-message.module.css';
 
 export const NewMessage = ({ topic_id, setClick }) => {
   const [message, setMessage] = useState('');
@@ -13,20 +14,24 @@ export const NewMessage = ({ topic_id, setClick }) => {
         .then(data => {
           if (data.success === true) {
             setMessage('');
-            setInfoMessage('Message sent successfully');
+            setInfoMessage('Порука је успешно послата.');
             setClick(new Date());
           }
         });
+    } else {
+      setInfoMessage('Напиши поруку.')
     }
   };
 
   return (
-    <form>
-      <h4>New Message</h4>
-      <p>{infoMessage}</p>
-      <label htmlFor="message">Message:</label>
-      <input type="text" placeholder="Enter message" value={message} onChange={e => setMessage(e.target.value)} />
-      <input type="submit" value="Send" onClick={handleClick} />
+    <form className={styles.container}>
+      <h4>Одговори</h4>
+      <div>
+        <label htmlFor="message"></label>
+        <input type="text" className={styles.redInput} placeholder="Унеси поруку" value={message} onChange={e => setMessage(e.target.value)} />
+        <input type="submit" className={styles.greenInput} value="Пошаљи" onClick={handleClick} />
+      </div>
+      <p className={styles.errorMsg}>{infoMessage}</p>
     </form>
   );
 }

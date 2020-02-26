@@ -4,3 +4,22 @@
   width: 100%;
 }
 
+.info {
+  font-size: 0.8em;
+}
+
+.message hr {
+  border-color: gray;
+}
+
+.redSpan {
+  color: red;
+}
+
+.yellowSpan {
+  color: yellow;
+}
+
+.greenSpan {
+  color: green;
+}

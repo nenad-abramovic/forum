@@ -10,15 +10,22 @@ export const Login = ({ history }) => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    if(username === '' || password === '') {
-      return setInfoMessage('Username or password can\'t be empty!');
+    if (username === '' && password === '') {
+      return setInfoMessage('Унеси корисничко име и шифру.');
     }
-    loginUser({username, password})
+    if (username === '') {
+      return setInfoMessage('Унеси корисничко име.');
+    }
+    if (password === '') {
+      return setInfoMessage('Унеси шифру.');
+    }
+    loginUser({ username, password })
       .then(data => {
-        if(data.success === true){
+        if (data.success === true) {
           setUser(data.user);
-          history.push('/topiclist');
           setInfoMessage('');
+        } else {
+          setInfoMessage('Погрешно корисничко име или шифра')
         }
       })
       .catch(error => setInfoMessage(error.toString()));
@@ -26,13 +33,19 @@ export const Login = ({ history }) => {
 
   return (
     <form className={styles.form}>
-      <h2>Login</h2>
-      <p>{infoMessage}</p>
-      <label htmlFor="login-username">Username:</label>
-      <input type="text" id="login-username" placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)} onBlur={e => setUsername(e.target.value.trim())} />
-      <label htmlFor="login-password">Password:</label>
-      <input type="password" id="login-password" placeholder="Enter password" value={password} onChange={e => setPassword(e.target.value)} onBlur={e => setPassword(e.target.value.trim())} />
-      <input type="submit" value="Log In" onClick={handleClick} />
+
+      <div className={styles.container}>
+        <div>
+          <label htmlFor="login-username"></label>
+          <input type="text" className={styles.redInput} id="login-username" placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)} onBlur={e => setUsername(e.target.value.trim())} />
+        </div>
+        <div>
+          <label htmlFor="login-password"></label>
+          <input type="password" className={styles.yellowInput} id="login-password" placeholder="Enter password" value={password} onChange={e => setPassword(e.target.value)} onBlur={e => setPassword(e.target.value.trim())} />
+        </div>
+        <input type="submit" className={styles.greenInput} value="Пријави се" onClick={handleClick} />
+      </div>
+      <p className={styles.errorMsg}>{infoMessage}</p>
     </form>
   );
 }

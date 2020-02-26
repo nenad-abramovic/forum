@@ -1,7 +1,11 @@
 .main {
-  overflow: auto;
-  padding: 10px;
-  /* background-color: rgba(122, 201, 253, 0.562); */
-  background-color: #EFEEEE;
-  min-height: calc(100vh - 121px);
+  background-color: rgb(12, 12, 12);
+  border-radius: 10px;
+  margin: 1em;
+  border: 1px solid rgba(255, 255, 255, 0.20);
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
 }

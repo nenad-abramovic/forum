@@ -8,19 +8,20 @@ import { NewTopic } from '../components/new-topic';
 import { ProtectedRoute } from '../components/protected-route';
 import { Profile } from '../components/profile';
 import { Topic } from '../components/topic';
+import WelcomeMessage from '../components/welcome-message';
 
 export const Content = () => {
   return (
-    <main className={`${styles.main} col-12 col-s-12`}>
+    <main className={styles.main}>
       <Switch>
         <Route exact path="/" render={(props) => {
           return (
             <>
-              <div className="col-3 col-s-4">
+              <div className={styles.container}>
                 <Registration {...props} />
-                <Login {...props} />
+                <WelcomeMessage />
               </div>
-              <div className="col-9 col-s-8">
+              <div>
                 <TopicList />
               </div>
             </>
