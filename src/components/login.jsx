@@ -3,7 +3,7 @@ import { loginUser } from '../utilities/services';
 import { setUser } from '../utilities/user';
 import styles from './login.module.css';
 
-export const Login = ({ history }) => {
+const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [infoMessage, setInfoMessage] = useState('');
@@ -28,7 +28,7 @@ export const Login = ({ history }) => {
           setInfoMessage('Погрешно корисничко име или шифра')
         }
       })
-      .catch(error => setInfoMessage(error.toString()));
+      .catch(error => setInfoMessage(`ГРЕШКА: ${error.toString()}`));
   }
 
   return (
@@ -48,4 +48,6 @@ export const Login = ({ history }) => {
       <p className={styles.infoMessage}>{infoMessage}</p>
     </form>
   );
-}
+};
+
+export default Login;

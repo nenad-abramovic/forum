@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './footer.module.css';
 
-export const Footer = () => {
+export default () => {
   return (
     <footer className={styles.footer}>
       <div>
@@ -18,4 +18,4 @@ export const Footer = () => {
       </div>
     </footer>
   );
-}
+};

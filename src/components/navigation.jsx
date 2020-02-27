@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { setUser, getUser, subscribe } from '../utilities/user';
 import styles from './navigation.module.css';
-import { Login } from './login';
+import Login from './login';
 
-export const Navigation = () => {
+export default () => {
   const history = useHistory();
   const [isLoggedIn, setIsLoggedIn] = useState(Object.keys(getUser()).length !== 0);
 

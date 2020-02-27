@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import styles from './content.module.css';
 import { Registration } from '../components/registration';
-import { Login } from '../components/login';
+import Login from '../components/login';
 import { TopicList } from '../components/topic-list';
 import { NewTopic } from '../components/new-topic';
 import { ProtectedRoute } from '../components/protected-route';
@@ -10,7 +10,7 @@ import { Profile } from '../components/profile';
 import { Topic } from '../components/topic';
 import WelcomeMessage from '../components/welcome-message';
 
-export const Content = () => {
+export default () => {
   return (
     <main className={styles.main}>
       <Switch>
@@ -42,4 +42,4 @@ export const Content = () => {
       </Switch>
     </main>
   );
-}
+};

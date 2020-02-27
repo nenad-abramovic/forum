@@ -11,11 +11,6 @@
   font-size: 0.8rem;
 }
 
-.button:hover {
-  cursor: pointer;
-  background-color: rgba(66, 161, 250, 0.29);
-}
-
 .input,
 .button {
   border: 1px solid rgb(66, 161, 250);
@@ -23,4 +18,18 @@
   background-color: transparent;
   padding: 0.5rem;
   margin-right: 0.5rem;
+  box-shadow: 1px 1px 1px rgb(66, 161, 250);
+
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: rgba(66, 161, 250, 0.29);
+}
+
+.button:active {
+  position: relative;
+  top: 1px;
+  left: 1px;
+  box-shadow: none;
 }
