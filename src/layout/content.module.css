@@ -1,13 +1,21 @@
 .main {
   background-color: rgb(12, 12, 12);
   border-radius: 0.5rem;
-  margin: 1rem;
+  margin: 0.5rem 1rem;
   border: 1px solid rgba(255, 255, 255, 0.20);
   padding: 0.5rem;
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
   display: flex;
   justify-content: space-around;
+}
+
+.topicContainer {
+  display: flex;
+  flex-direction: column;
+  flex:1;
 }

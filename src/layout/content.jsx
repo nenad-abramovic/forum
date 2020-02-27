@@ -29,10 +29,10 @@ export default () => {
         <Route path="/topic/:topic_id" component={Topic} />
         <ProtectedRoute path="/topiclist" render={(props) => {
           return (
-            <>
+            <div className={styles.topicContainer}>
               <TopicList {...props} />
               <NewTopic {...props} />
-            </>
+            </div>
           );
         }} />
       </Switch>

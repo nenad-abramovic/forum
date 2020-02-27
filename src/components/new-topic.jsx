@@ -33,7 +33,7 @@ const NewTopic = () => {
   };
 
   return (
-    <form>
+    <form className={styles.form}>
       <h4>New Topic</h4>
       <label htmlFor="topic-title">Title:</label>
       <input className={styles.input} type="text" id="topic-title" placeholder="Enter title" value={topicTitle} onChange={e => setTopicTitle(e.target.value)} onBlur={e => setTopicTitle(e.target.value.trim())} />
