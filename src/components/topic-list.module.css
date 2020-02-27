@@ -15,3 +15,21 @@
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+table {
+  margin: auto;
+  font-size: 0.8rem;
+}
+
+th {
+  padding: 0.8rem;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+td {
+  padding: 0.8rem;
+}
+
+tr:nth-child(2n) {
+  background-color: rgba(0, 0, 0, 0.4);
+}

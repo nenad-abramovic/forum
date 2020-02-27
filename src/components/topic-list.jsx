@@ -78,33 +78,26 @@ export const TopicList = () => {
               <tr>
                 <td>{topic.title.toString()}</td>
                 <td>{new Date(topic.timestamp).toLocaleString()}</td>
-                <td>{topic.last_message.username}<br />{new Date(topic.last_message.timestamp).toLocaleString()}</td>
+                <td>{topic.last_message.username}<br />
+                  {
+                    new Date(topic.last_message.timestamp).toLocaleString() === 'Invalid Date'
+                      ? 'Нема порука'
+                      : new Date(topic.first_message.timestamp).toLocaleString()
+                  }
+                </td>
                 <td>{topic.no_of_messages}</td>
-                <td>{topic.first_message.username}<br />{new Date(topic.first_message.timestamp).toLocaleString()}</td>
+                <td>{topic.first_message.username}<br />
+                  {
+                    new Date(topic.first_message.timestamp).toLocaleString() === 'Invalid Date'
+                      ? 'Нема порука'
+                      : new Date(topic.first_message.timestamp).toLocaleString()
+                  }
+                </td>
               </tr>
             ))
           }
         </tbody>
       </table>
-      <h2>Topics</h2>
-      <select onChange={handleChange}>
-        <option value="date-created">Date Created</option>
-        <option value="last-comment">Last Commented</option>
-        <option value="number-of-comments">Number of Comments</option>
-      </select>
-      <button onClick={handleClick}>↑</button>
-      <ul>
-        {
-          topics.map(topic => (
-            <li className={styles.topicLink} key={topic.topic_id}>
-              <Link key={topic.topic_id} to={{
-                pathname: `/topic/${topic.topic_id}`,
-                state: { topic }
-              }}>{topic.title.toString()} - {new Date(topic.timestamp).toLocaleString()} [{}]</Link>
-            </li>
-          ))
-        }
-      </ul>
     </section>
   );
 }
