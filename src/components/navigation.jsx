@@ -23,10 +23,10 @@ const Navigation = () => {
     return (
       <nav>
         <ul className={styles.navigation}>
-          <li><Link to="/topiclist" className={styles.redLink}>Теме</Link></li>
-          <li><Link to={`/profile/${getUser().user_id}`} className={styles.yellowLink}>Профил</Link></li>
-          <li><Link to="/userlist" className={styles.greenLink}>Корисници</Link></li>
-          <li><Link to="/" onClick={handleClick} className={styles.blueLink}>Одјави се</Link ></li>
+          <li><Link to="/topiclist" className={styles.link}>Теме</Link></li>
+          <li><Link to={`/profile/${getUser().user_id}`} className={styles.link}>Профил</Link></li>
+          <li><Link to="/userlist" className={styles.link}>Корисници</Link></li>
+          <li><Link to="/" onClick={handleClick} className={styles.link}>Одјави се</Link ></li>
         </ul>
       </nav>
     );

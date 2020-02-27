@@ -3,39 +3,15 @@
   list-style-type: none;
 }
 
-.navigation li a {
-  text-decoration: none;
+.link {
+  color: rgb(66, 161, 250);
   margin-right: 0.7em;
   padding: 0.6em;
+  display: inline-block;
+  text-decoration: none;
 }
 
-.redLink {
-  color: red;
-}
-
-.navigation li .redLink:hover {
-  text-shadow: 0 0 10px red;
-}
-
-.greenLink {
-  color: rgb(5, 248, 5);
-}
-
-.navigation li .greenLink:hover {
-  text-shadow: 0 0 10px rgb(5, 248, 5);
-}
-.yellowLink {
-  color: yellow;
-}
-
-.navigation li .yellowLink:hover {
-  text-shadow: 0 0 10px yellow;
-}
-
-.blueLink {
-  color: rgb(66, 161, 250);
-}
-
-.navigation li .blueLink:hover {
+.link:hover {
   text-shadow: 0 0 10px rgb(66, 161, 250);
+  transform: scale(1.2);
 }

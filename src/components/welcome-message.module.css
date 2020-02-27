@@ -6,32 +6,12 @@
   flex-direction: column;
   justify-content: center;
   padding: 5px;
-  flex-grow: 5;
+  flex: 1.5;
   align-items: center;
   margin: 1em;
   margin-left: 0;
 }
 
-.container span {
-  text-decoration: underline;
-}
-
-.container p {
-  margin: 0.5em;
-}
-
-.redLine {
-  color: red;
-}
-
-.yellowLine {
-  color: yellow;
-}
-
-.blueLine {
-  color: rgb(66, 161, 250);
-}
-
-.greenLine {
-  color: rgb(0, 255, 0);
+.text {
+  margin: 0.5rem;
 }

@@ -3,7 +3,7 @@
   padding: 1em;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.20);
-  flex-grow: 1;
+  flex: 1;
   margin: 1em;
 }
 
