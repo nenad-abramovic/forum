@@ -30,6 +30,28 @@ td {
   padding: 0.8rem;
 }
 
+tr {
+  cursor: pointer;
+}
+
 tr:nth-child(2n) {
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+select {
+  background-color: transparent;
+  border: 1px solid rgb(66, 161, 250);
+  padding: 0.5rem;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgb(66, 161, 250);
+  padding: 0.5rem;
+  margin-left: 1rem;
+}
+
+.controls {
+  text-align: center;
+  margin-bottom: 1rem;
 }

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import styles from './topic-list.module.css';
 import { getAllTopics, getAllMessages } from '../utilities/services';
+import { useHistory } from 'react-router-dom';
 
 export const TopicList = () => {
+  const history = useHistory();
   const [topics, setTopics] = useState([]);
 
   async function f() {
@@ -14,13 +15,7 @@ export const TopicList = () => {
         if (messages.success === true) {
           let topicMessages = messages.data.filter(msg => msg.topic_id === topic.topic_id);
           topicMessages = topicMessages.sort((a, b) => a.timestamp - b.timestamp);
-          console.log({
-            ...topic,
-            no_of_messages: topicMessages.length,
-            first_message: topicMessages[0],
-            last_message: topicMessages[topicMessages.length - 1]
 
-          })
           return ({
             ...topic,
             no_of_messages: topicMessages.length,
@@ -38,8 +33,7 @@ export const TopicList = () => {
     f();
   }, []);
 
-  const handleClick = (e) => {
-    e.target.textContent = (e.target.textContent === '↑') ? '↓' : '↑';
+  const handleClick = () => {
     let tmp = [...topics];
     setTopics(tmp.reverse());
   };
@@ -49,11 +43,22 @@ export const TopicList = () => {
 
     switch (e.target.value) {
       case 'date-created':
-        setTopics(tmp.sort((a, b) => a.timestamp - b.timestamp));
+        setTopics(tmp.sort((a, b) => b.timestamp - a.timestamp));
         break;
       case 'last-comment':
+        setTopics(tmp.sort((a, b) => {
+          if (!a.last_message.timestamp) {
+            return 1;
+          }
+          if (!b.last_message.timestamp) {
+            return -1;
+          }
+
+          return b.last_message.timestamp - a.last_message.timestamp;
+        }));
         break;
       case 'number-of-comments':
+        setTopics(tmp.sort((a, b) => b.no_of_messages - a.no_of_messages));
         break;
       default:
         console.log('Something went wrong!');
@@ -62,6 +67,14 @@ export const TopicList = () => {
 
   return (
     <section className={styles.topicList}>
+      <div className={styles.controls}>
+        <select onChange={handleChange}>
+          <option value="date-created">Date Created</option>
+          <option value="last-comment">Last Commented</option>
+          <option value="number-of-comments">Number of Comments</option>
+        </select>
+        <button onClick={handleClick}>⇅</button>
+      </div>
       <table>
         <thead>
           <tr>
@@ -75,7 +88,7 @@ export const TopicList = () => {
         <tbody>
           {
             topics.map(topic => (
-              <tr>
+              <tr key={topic.topic_id} onClick={() => history.push(`/topic/${topic.topic_id}`, { topic })}>
                 <td>{topic.title.toString()}</td>
                 <td>{new Date(topic.timestamp).toLocaleString()}</td>
                 <td>{topic.last_message.username}<br />
