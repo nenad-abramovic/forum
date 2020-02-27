@@ -19,12 +19,14 @@
 table {
   margin: auto;
   font-size: 0.8rem;
+  border: 3px solid rgba(0, 0, 0, 0.6);
 }
 
 th {
   padding: 0.8rem;
   background-color: rgba(0, 0, 0, 0.6);
 }
+
 
 td {
   padding: 0.8rem;
@@ -36,6 +38,14 @@ tr {
 
 tr:nth-child(2n) {
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+tr:active {
+  background-color: red;
+}
+
+tr:hover {
+  background-color: black;
 }
 
 select {

@@ -1,11 +1,11 @@
 .footer {
   background-color: rgb(12, 12, 12);
-  border-radius: 10px;
- display: flex;
- justify-content: space-between;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
   padding: 10px;
   align-items: center;
-  margin: 1em;
+  margin: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.20);
 
 }
@@ -22,14 +22,7 @@
   text-decoration: none;
 }
 
-.navigation li .greenLink:hover {
-  text-shadow: 0 0 10px rgb(5, 248, 5);
-}
 .yellowLink {
   color: yellow;
   text-decoration: none;
-}
-
-.navigation li .yellowLink:hover {
-  text-shadow: 0 0 10px yellow;
 }

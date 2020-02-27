@@ -7,70 +7,26 @@
   margin: 1em;
 }
 
-.form * {
-  color: rgb(0, 255, 0);
+.title {
+  text-align: center;
 }
 
 .infoMessage {
   font-size: 0.8em;
 }
 
-.form input {
-  background-color: transparent;
-  padding: 0.5em;
-  width: calc(100% - 0.6em);
-  margin: 0.3em;
-}
-
-.redInput {
-  border: 1px solid rgb(255, 0, 0);
-  color: rgb(255, 0, 0);
-
-}
-
-
-.yellowInput {
-  border: 1px solid yellow;
-  color: yellow;
-
-}
-
-
-.greenInput {
-  border: 1px solid rgb(5, 248, 5);
-  color: rgb(5, 248, 5);
-}
-
-.greenInput:hover {
+.button:hover {
   cursor: pointer;
-  background-color: rgba(5, 248, 5, 0.363);
+  background-color: rgba(66, 161, 250, 0.29);
 }
 
-.blueInput {
+.input,
+.button {
   border: 1px solid rgb(66, 161, 250);
   color: rgb(66, 161, 250);
-}
-
-.form h2 {
-  text-align: center;
-}
-
-.form label {
-  margin: 0.3em;
-}
-
-.redLabel {
-  color: red;
-}
-
-.greenLabel {
-  color: rgb(0, 255, 0);
-}
-
-.yellowLabel {
-  color: yellow;
-}
-
-.blueLabel {
-  color: rgb(66, 161, 250);
+  background-color: transparent;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
 }

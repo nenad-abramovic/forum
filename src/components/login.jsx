@@ -37,15 +37,15 @@ export const Login = ({ history }) => {
       <div className={styles.container}>
         <div>
           <label htmlFor="login-username"></label>
-          <input type="text" className={styles.redInput} id="login-username" placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)} onBlur={e => setUsername(e.target.value.trim())} />
+          <input type="text" className={styles.input} id="login-username" placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)} onBlur={e => setUsername(e.target.value.trim())} />
         </div>
         <div>
           <label htmlFor="login-password"></label>
-          <input type="password" className={styles.yellowInput} id="login-password" placeholder="Enter password" value={password} onChange={e => setPassword(e.target.value)} onBlur={e => setPassword(e.target.value.trim())} />
+          <input type="password" className={styles.input} id="login-password" placeholder="Enter password" value={password} onChange={e => setPassword(e.target.value)} onBlur={e => setPassword(e.target.value.trim())} />
         </div>
-        <input type="submit" className={styles.greenInput} value="Пријави се" onClick={handleClick} />
+        <input type="submit" className={styles.button} value="Пријави се" onClick={handleClick} />
       </div>
-      <p className={styles.errorMsg}>{infoMessage}</p>
+      <p className={styles.infoMessage}>{infoMessage}</p>
     </form>
   );
 }

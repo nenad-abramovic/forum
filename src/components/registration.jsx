@@ -64,39 +64,39 @@ export const Registration = ({ history }) => {
 
   return (
     <form className={styles.form}>
-      <h2>Регистрација</h2>
+      <h2 className={styles.title}>Придружи се</h2>
       <p className={styles.infoMessage}>{infoMessage}</p>
       <label htmlFor="name" className={styles.redLabel}>Име:</label>
       <br />
-      <input className={styles.redInput} type="text" id="name" value={userData.name} onChange={e => setUserData({ ...userData, name: e.target.value })} required />
+      <input className={styles.input} type="text" id="name" value={userData.name} onChange={e => setUserData({ ...userData, name: e.target.value })} required />
       <br />
-      <label htmlFor="surname" className={styles.yellowLabel}>Презиме:</label>
+      <label htmlFor="surname" className={styles.label}>Презиме:</label>
       <br />
-      <input className={styles.yellowInput} type="text" id="surname" value={userData.surname} onChange={e => setUserData({ ...userData, surname: e.target.value })} required />
+      <input className={styles.input} type="text" id="surname" value={userData.surname} onChange={e => setUserData({ ...userData, surname: e.target.value })} required />
       <br />
-      <label htmlFor="username" className={styles.blueLabel}>Корисничко име:</label>
+      <label htmlFor="username" className={styles.label}>Корисничко име:</label>
       <br />
-      <input className={styles.blueInput} type="text" id="username" value={userData.username} onChange={e => {
+      <input className={styles.input} type="text" id="username" value={userData.username} onChange={e => {
         setUserData({ ...userData, username: e.target.value });
         isUsernameTaken(e);
       }} required />
       <br />
-      <label htmlFor="email" className={styles.redLabel}>Е-маил:</label>
+      <label htmlFor="email" className={styles.label}>Е-маил:</label>
       <br />
-      <input className={styles.redInput} type="email" id="email" value={userData.email} onChange={e => {
+      <input className={styles.input} type="email" id="email" value={userData.email} onChange={e => {
         setUserData({ ...userData, email: e.target.value });
         isEmailTaken(e);
       }} required />
       <br />
-      <label htmlFor="password" className={styles.blueLabel}>Шифра:</label>
+      <label htmlFor="password" className={styles.label}>Шифра:</label>
       <br />
-      <input className={styles.blueInput} type="password" id="password" value={userData.password} onChange={e => setUserData({ ...userData, password: e.target.value })} required />
+      <input className={styles.input} type="password" id="password" value={userData.password} onChange={e => setUserData({ ...userData, password: e.target.value })} required />
       <br />
-      <label htmlFor="confirm-password" className={styles.yellowLabel}>Понови шифру:</label>
+      <label htmlFor="confirm-password" className={styles.label}>Понови шифру:</label>
       <br />
-      <input className={styles.yellowInput} type="password" id="confirm-password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value.trim())} required />
+      <input className={styles.input} type="password" id="confirm-password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value.trim())} required />
       <br />
-      <input className={styles.greenInput} type="submit" value="Региструј се!" onClick={handleClick} />
+      <input className={styles.button} type="submit" value="Региструј се!" onClick={handleClick} />
     </form>
   );
 }
