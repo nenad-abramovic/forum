@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './welcome-message.module.css';
 
-export default function WelcomeMessage() {
+const WelcomeMessage = () => {
   return (
     <div className={styles.container}>
       <h1>
@@ -20,5 +20,7 @@ export default function WelcomeMessage() {
       <p className={styles.blueLine}>Сазнај нешто ново и прошири видике.</p>
       <p className={styles.yellowLine}>Региструј се бесплатно.</p>
     </div>
-  )
-}
+  );
+};
+
+export default WelcomeMessage;

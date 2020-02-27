@@ -3,7 +3,7 @@ import { sendMessage } from '../utilities/services';
 import { getUser } from '../utilities/user';
 import styles from './new-message.module.css';
 
-export const NewMessage = ({ topic_id, setClick }) => {
+const NewMessage = ({ topic_id, setClick }) => {
   const [message, setMessage] = useState('');
   const [infoMessage, setInfoMessage] = useState('');
 
@@ -34,4 +34,6 @@ export const NewMessage = ({ topic_id, setClick }) => {
       <p className={styles.errorMsg}>{infoMessage}</p>
     </form>
   );
-}
+};
+
+export default NewMessage;

@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import styles from './new-topic.module.css';
 import { addNewTopic, sendMessage } from '../utilities/services';
 import { getUser } from '../utilities/user';
+import { useHistory } from 'react-router-dom';
 
-export const NewTopic = ({ history }) => {
+const NewTopic = () => {
+  const history = useHistory();
   const [topicTitle, setTopicTitle] = useState('');
   const [message, setMessage] = useState('');
   const [infoMessage, setInfoMessage] = useState('');
@@ -11,21 +13,21 @@ export const NewTopic = ({ history }) => {
   const handleClick = (e) => {
     e.preventDefault();
     if (message === '' || topicTitle === '') {
-    return setInfoMessage('Topic Title or first message can\'t be empty!');
+      return setInfoMessage('Topic Title or first message can\'t be empty!');
     }
 
     addNewTopic(getUser().user_id, topicTitle)
       .then(data => {
-        if(data.success === true) {
+        if (data.success === true) {
           sendMessage(getUser().username, data.topic.topic_id, message)
-          .then(msg_data => {
-            if(msg_data.success === true) {
-              history.push({
-                pathname:`/topic/${data.topic.topic_id}`,
-                state: { topic: data.topic }
-              });
-            }
-          });
+            .then(msg_data => {
+              if (msg_data.success === true) {
+                history.push({
+                  pathname: `/topic/${data.topic.topic_id}`,
+                  state: { topic: data.topic }
+                });
+              }
+            });
         }
       })
   };
@@ -41,4 +43,6 @@ export const NewTopic = ({ history }) => {
       <input className={styles.inputBtn} type="submit" value="Add Topic" onClick={handleClick} />
     </form>
   );
-}
+};
+
+export default NewTopic;

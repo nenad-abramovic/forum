@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { getTopicMessages } from '../utilities/services';
-import { Message } from './message';
-import { NewMessage } from './new-message';
+import Message from './message';
+import NewMessage from './new-message';
 import { getUser } from '../utilities/user';
 import styles from './topic.module.css';
 
-export const Topic = ({ location }) => {
+const Topic = ({ location }) => {
   const [click, setClick] = useState(new Date());
   const [messages, setMessages] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -44,4 +44,6 @@ export const Topic = ({ location }) => {
       }
     </section>
   );
-}
+};
+
+export default Topic;

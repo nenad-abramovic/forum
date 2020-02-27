@@ -3,7 +3,7 @@ import styles from './topic-list.module.css';
 import { getAllTopics, getAllMessages } from '../utilities/services';
 import { useHistory } from 'react-router-dom';
 
-export const TopicList = () => {
+const TopicList = () => {
   const history = useHistory();
   const [topics, setTopics] = useState([]);
 
@@ -113,4 +113,6 @@ export const TopicList = () => {
       </table>
     </section>
   );
-}
+};
+
+export default TopicList;

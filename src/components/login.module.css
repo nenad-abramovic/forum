@@ -18,8 +18,10 @@
   background-color: transparent;
   padding: 0.5rem;
   margin-right: 0.5rem;
-  box-shadow: 1px 1px 1px rgb(66, 161, 250);
+}
 
+.button {
+  box-shadow: 1px 1px 1px rgba(66, 161, 250, 0.5);
 }
 
 .button:hover {

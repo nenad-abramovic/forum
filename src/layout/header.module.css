@@ -1,19 +1,18 @@
 .header {
+  align-items: center;
   background-color: rgb(12, 12, 12);
+  border: 1px solid rgba(255, 255, 255, 0.20);
   border-radius: 0.5rem;
-  margin: 1rem;
-  padding: 0.5rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.20);
+  margin: 1rem;
+  padding: 0.5rem;
 
 }
 
-.header h1 a {
-  text-decoration: none;
+.title {
   font-weight: 900;
-  text-shadow: 0 0 0.5rem rgb(66, 161, 250);
-  /* text-shadow: -2px -2px 0 rgb(0, 240, 12), 2px -2px 0 rgb(245, 0, 0), -2px 2px 0 rgb(255, 251, 0), 2px 2px 0 rgb(244, 248, 0); */
   letter-spacing: 0.5rem;
+  text-decoration: none;
+  text-shadow: 0 0 0.5rem rgb(66, 161, 250);
 }

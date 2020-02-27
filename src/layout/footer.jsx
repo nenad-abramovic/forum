@@ -6,7 +6,7 @@ export default () => {
   return (
     <footer className={styles.footer}>
       <div>
-        <Link to="/registration" className={styles.greenLink}>Региструј се</Link>
+        <Link to="/registration" className={styles.link}>Региструј се</Link>
       </div>
       <div>
         <label>
@@ -14,7 +14,7 @@ export default () => {
       </label>
       </div>
       <div>
-        <p className={styles.yellowLink} onClick={() => window.scrollTo(0, 0)}>На врх</p>
+        <p className={styles.link} onClick={() => window.scrollTo(0, 0)}>На врх</p>
       </div>
     </footer>
   );

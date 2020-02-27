@@ -4,7 +4,7 @@ import { setUser, getUser, subscribe } from '../utilities/user';
 import styles from './navigation.module.css';
 import Login from './login';
 
-export default () => {
+const Navigation = () => {
   const history = useHistory();
   const [isLoggedIn, setIsLoggedIn] = useState(Object.keys(getUser()).length !== 0);
 
@@ -35,5 +35,6 @@ export default () => {
   return (
     <Login />
   );
+};
 
-}
+export default Navigation;

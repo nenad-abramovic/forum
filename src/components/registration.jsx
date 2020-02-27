@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import styles from './registration.module.css';
 import { registerUser, getAllUsers } from '../utilities/services';
 import { setUser } from '../utilities/user';
+import { useHistory } from 'react-router-dom';
 
-export const Registration = ({ history }) => {
+const Registration = () => {
+  const history = useHistory();
   const [userData, setUserData] = useState({
     name: '',
     surname: '',
@@ -99,4 +101,6 @@ export const Registration = ({ history }) => {
       <input className={styles.button} type="submit" value="Региструј се!" onClick={handleClick} />
     </form>
   );
-}
+};
+
+export default Registration;

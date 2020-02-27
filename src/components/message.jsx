@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './message.module.css';
 import { Link } from 'react-router-dom';
 
-export const Message = ({ message }) => {
+const Message = ({ message }) => {
   const datetime = new Date(message.timestamp);
 
   return (
@@ -13,4 +13,6 @@ export const Message = ({ message }) => {
       <hr />
     </div>
   );
-}
+};
+
+export default Message;
