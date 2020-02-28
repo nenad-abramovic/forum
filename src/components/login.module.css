@@ -1,6 +1,6 @@
 .container {
-  display: flex;
   align-items: flex-end;
+  display: flex;
 }
 
 .container ::placeholder {
@@ -13,11 +13,11 @@
 
 .input,
 .button {
+  background-color: transparent;
   border: 1px solid rgb(66, 161, 250);
   color: rgb(66, 161, 250);
-  background-color: transparent;
-  padding: 0.5rem;
   margin-right: 0.5rem;
+  padding: 0.5rem;
 }
 
 .button {
@@ -25,13 +25,13 @@
 }
 
 .button:hover {
-  cursor: pointer;
   background-color: rgba(66, 161, 250, 0.29);
+  cursor: pointer;
 }
 
 .button:active {
+  box-shadow: none;
+  left: 1px;
   position: relative;
   top: 1px;
-  left: 1px;
-  box-shadow: none;
 }
