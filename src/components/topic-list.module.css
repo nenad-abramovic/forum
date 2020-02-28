@@ -39,11 +39,7 @@ tr:nth-child(2n) {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-tr:active {
-  background-color: red;
-}
-
-tr:hover {
+tbody tr:hover {
   background-color: black;
 }
 

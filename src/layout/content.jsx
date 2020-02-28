@@ -9,6 +9,7 @@ import ProtectedRoute from '../components/protected-route';
 import Profile from '../components/profile';
 import Topic from '../components/topic';
 import WelcomeMessage from '../components/welcome-message';
+import UserList from '../components/user-list';
 
 export default () => {
   return (
@@ -27,6 +28,7 @@ export default () => {
         <Route path="/login" component={Login} />
         <Route path="/profile/:user_id" component={Profile} />
         <Route path="/topic/:topic_id" component={Topic} />
+        <Route path="/userlist" component={UserList} />
         <ProtectedRoute path="/topiclist" render={(props) => {
           return (
             <div className={styles.topicContainer}>

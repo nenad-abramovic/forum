@@ -1,0 +1,9 @@
+.container {
+  background-color: rgb(22, 22, 22);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  flex: 1;
+  margin: 0.5rem;
+  padding: 1rem;
+}
