@@ -24,15 +24,17 @@ const Topic = ({ location }) => {
     getTopicMessages(location.state.topic.topic_id)
       .then(data => {
         if (data.success === true) {
-          setMessages(data.messages);
+          setMessages(data.messages.reverse());
         }
       });
   }, [location.state.topic.topic_id, click]);
 
   return (
     <section className={styles.topic}>
-      <h3>{location.state.topic.title.toString()}</h3>
-      <p>Created on: {new Date(location.state.topic.timestamp).toLocaleString()}</p>
+      <div className={styles.titleContainer}>
+        <h2>{location.state.topic.title.toString()}</h2>
+        <p>Датум објављивања: {new Date(location.state.topic.timestamp).toLocaleString('sr-rs')}</p>
+      </div>
       {
         messages.map(message => <Message key={message.message_id} message={message} />)
       }

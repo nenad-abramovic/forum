@@ -27,28 +27,73 @@ const Registration = () => {
   useEffect(() => {
     getAllUsers()
       .then(data => {
-        if (data.success === true) {
+        if (data.success) {
           setAllUsers(data.users);
         }
       })
   }, []);
 
   const handleSubmit = (e) => {
+    let isValidData = true;
     e.preventDefault();
-    if (!validatePassword(userData.password)) {
-      return setInfoMessage('Invalid Password! You must use at least one number, one uppercase and one lowercase letter.');
-    }
-    if (userData.password !== confirmPassword) {
-      return setInfoMessage('Password was not confirmed.');
+
+    if (userData.name.trim() === '') {
+      setInfoMessage(prevState => ({
+        ...prevState,
+        name: 'Унеси име.'
+      }));
+      isValidData = false;
     }
 
-    registerUser(userData)
-      .then(data => {
-        if (data.success === true) {
-          setUser(data.user);
-          history.push('/topiclist');
-        }
-      })
+    if (userData.surname.trim() === '') {
+      setInfoMessage(prevState => ({
+        ...prevState,
+        surname: 'Унеси презиме.'
+      }));
+      isValidData = false;
+    }
+
+    if (userData.username.trim() === '') {
+      setInfoMessage(prevState => ({
+        ...prevState,
+        username: 'Унеси корисничко име.'
+      }));
+      isValidData = false;
+    }
+
+    if (userData.email.trim() === '') {
+      setInfoMessage(prevState => ({
+        ...prevState,
+        email: 'Унеси емаил.'
+      }));
+      isValidData = false;
+    }
+
+    if (userData.password.trim() === '') {
+      setInfoMessage(prevState => ({
+        ...prevState,
+        password: 'Неисправна шифра! Шифра мора садржати једно мало, велико слово и број и имати бар 8 карактера.'
+      }));
+      isValidData = false;
+    }
+
+    if (userData.password !== confirmPassword) {
+      setInfoMessage(prevState => ({
+        ...prevState,
+        confirmPassword: 'Шифре нису исте.'
+      }));
+      isValidData = false;
+    }
+
+    if (isValidData) {
+      registerUser(userData)
+        .then(data => {
+          if (data.success) {
+            setUser(data.user);
+            history.push('/topiclist');
+          }
+        });
+    }
   };
 
   const isUsernameTaken = (e) => {
@@ -80,59 +125,63 @@ const Registration = () => {
   }
 
   const validatePassword = (password) => {
-    return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password);
+    if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password)) {
+      setInfoMessage({
+        ...infoMessage,
+        password: 'Неисправна шифра! Шифра мора садржати једно мало, велико слово и број и имати бар 8 карактера.'
+      });
+    } else {
+      setInfoMessage({
+        ...infoMessage,
+        password: ''
+      });
+    }
   };
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <h2 className={styles.title}>Придружи се</h2>
-      <label htmlFor="name" className={styles.redLabel}>
-        Име:
-        <span className={styles.infoMessage}>{'\n' + infoMessage.name}</span>
+      <label htmlFor="name">
+        Име: <span className={styles.infoMessage}>{infoMessage.name}</span>
       </label>
       <br />
-      <input className={styles.input} type="text" id="name" value={userData.name} onChange={e => setUserData({ ...userData, name: e.target.value })} required />
+      <input className={styles.input} type="text" id="name" value={userData.name} onChange={e => setUserData({ ...userData, name: e.target.value })} />
       <br />
-      <label htmlFor="surname" className={styles.label}>
-        Презиме:
-        <span className={styles.infoMessage}>{infoMessage.surname}</span>
+      <label htmlFor="surname">
+        Презиме: <span className={styles.infoMessage}>{infoMessage.surname}</span>
       </label>
       <br />
-      <input className={styles.input} type="text" id="surname" value={userData.surname} onChange={e => setUserData({ ...userData, surname: e.target.value })} required />
+      <input className={styles.input} type="text" id="surname" value={userData.surname} onChange={e => setUserData({ ...userData, surname: e.target.value })} />
       <br />
-      <label htmlFor="username" className={styles.label}>
-        Корисничко име:{" "}
-        <span className={styles.infoMessage}>{infoMessage.username}</span>
+      <label htmlFor="username">
+        Корисничко име: <span className={styles.infoMessage}>{infoMessage.username}</span>
       </label>
       <br />
       <input className={styles.input} type="text" id="username" value={userData.username} onChange={e => {
         setUserData({ ...userData, username: e.target.value });
         isUsernameTaken(e);
-      }} required />
+      }} />
       <br />
-      <label htmlFor="email" className={styles.label}>
-        Е-маил:
-        <span className={styles.infoMessage}>{infoMessage.email}</span>
+      <label htmlFor="email">
+        Е-маил: <span className={styles.infoMessage}>{infoMessage.email}</span>
       </label>
       <br />
       <input className={styles.input} type="email" id="email" value={userData.email} onChange={e => {
         setUserData({ ...userData, email: e.target.value });
         isEmailTaken(e);
-      }} required />
+      }} />
       <br />
-      <label htmlFor="password" className={styles.label}>
-        Шифра:
-        <span className={styles.infoMessage}>{infoMessage.password}</span>
+      <label htmlFor="password">
+        Шифра: <span className={styles.infoMessage}>{infoMessage.password}</span>
       </label>
       <br />
-      <input className={styles.input} type="password" id="password" value={userData.password} onChange={e => setUserData({ ...userData, password: e.target.value })} required />
+      <input className={styles.input} type="password" id="password" value={userData.password} onChange={e => setUserData({ ...userData, password: e.target.value })} onBlur={e => validatePassword(e.target.value.trim())} />
       <br />
-      <label htmlFor="confirm-password" className={styles.label}>
-        Понови шифру:
-        <span className={styles.infoMessage}>{infoMessage.confirmPassword}</span>
+      <label htmlFor="confirm-password">
+        Понови шифру: <span className={styles.infoMessage}>{infoMessage.confirmPassword}</span>
       </label>
       <br />
-      <input className={styles.input} type="password" id="confirm-password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value.trim())} required />
+      <input className={styles.input} type="password" id="confirm-password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value.trim())} />
       <br />
       <input className={styles.button} type="submit" value="Региструј се!" />
     </form>
