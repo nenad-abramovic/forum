@@ -38,20 +38,28 @@ const Profile = () => {
 
   return (
     <section>
-      <h4>Профил</h4>
-      <br />
-      <h5>Корисничко име</h5>
-      <p>{userData.username}</p>
-      <br />
-      <h5>Име</h5>
-      <p>{userData.name}</p>
-      <br />
-      <h5>Презиме</h5>
-      <p>{userData.surname}</p>
-      <br />
-      <h4>Поруке</h4>
+      <h3 className={styles.title}>Информације о кориснику</h3>
+      <div className={styles.userInfo}>
+        <div>
+          <h4>Корисничко име</h4>
+          <p>{userData.username}</p>
+        </div>
+        <div>
+          <h4>Име</h4>
+          <p>{userData.name}</p>
+        </div>
+        <div>
+          <h4>Презиме</h4>
+          <p>{userData.surname}</p>
+        </div>
+        <div>
+          <h4>Бр. порука</h4>
+          <p>{userMessages.length}</p>
+        </div>
+      </div>
+      <h3 className={styles.title}>Поруке</h3>
       {
-        userMessages.map(message => {
+        userMessages.reverse().map(message => {
           let topic = topics.find(topic => topic.topic_id === message.topic_id);
           return (
             <div className={styles.message} key={message.message_id} onClick={() => history.push(`/topic/${message.topic_id}`, { topic }
