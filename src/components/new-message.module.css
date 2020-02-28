@@ -1,47 +1,30 @@
-.container {
-  padding: 1em;
+.form {
+  padding: 0.5rem;
 }
 
-.container input {
-  background-color: transparent;
-  /* border: 1px solid rgba(255, 255, 255, 0.20); */
-  padding: 0.5em;
-  margin-right: 1em;
-}
-
-.errorMsg {
+.infoMessage {
   font-size: 0.8em;
 }
 
-.redInput {
-  color: red;
-  border: 1px solid rgb(255, 0, 0);
-  flex-grow: 1;
+.input,
+.button {
+  background-color: transparent;
+  border: 1px solid rgb(66, 161, 250);
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
 }
 
-.redInput::placeholder {
-  color: rgba(255, 0, 0, 0.555);
+.button {
+  flex: 1;
+  margin-left: 0.5rem;
 }
-
-.yellowInput {
-  border: 1px solid yellow;
-}
-
-.yellowInput::placeholder {
-  color: rgba(255, 255, 0, 0.555);
-}
-
-.greenInput {
-  border: 1px solid rgb(5, 248, 5);
-  color: rgb(5, 248, 5);
-}
-
-.greenInput:hover {
+.button:hover {
   cursor: pointer;
-  background-color: rgba(5, 248, 5, 0.363);
+  background-color: rgba(66, 161, 250, 0.29);
 }
 
-.container div {
+.container {
   display: flex;
-  justify-content: flex-end;
+  margin-top: 0.5rem;
 }

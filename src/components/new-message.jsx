@@ -24,14 +24,14 @@ const NewMessage = ({ topic_id, setClick }) => {
   };
 
   return (
-    <form className={styles.container}>
-      <h4>Одговори</h4>
-      <div>
+    <form className={styles.form}>
+      <h3>Одговори</h3>
+      <div className={styles.container}>
         <label htmlFor="message"></label>
-        <input type="text" className={styles.redInput} placeholder="Унеси поруку" value={message} onChange={e => setMessage(e.target.value)} />
-        <input type="submit" className={styles.greenInput} value="Пошаљи" onClick={handleClick} />
+        <input type="text" className={styles.input} placeholder="Унеси поруку" value={message} onChange={e => setMessage(e.target.value)} />
+        <input type="submit" className={styles.button} value="Пошаљи" onClick={handleClick} />
       </div>
-      <p className={styles.errorMsg}>{infoMessage}</p>
+      <p className={styles.infoMessage}>{infoMessage}</p>
     </form>
   );
 };
