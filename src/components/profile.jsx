@@ -24,7 +24,7 @@ const Profile = () => {
       .then(data => {
         if (data.success) {
           let tmp = data.data.filter(msg => msg.user_id === userData.user_id);
-          setUserMessages(tmp);
+          setUserMessages(tmp.reverse());
         }
       });
 
@@ -59,12 +59,12 @@ const Profile = () => {
       </div>
       <h3 className={styles.title}>Поруке</h3>
       {
-        userMessages.reverse().map(message => {
+        userMessages.map(message => {
           let topic = topics.find(topic => topic.topic_id === message.topic_id);
           return (
-            <div className={styles.message} key={message.message_id} onClick={() => history.push(`/topic/${message.topic_id}`, { topic }
-            )}>
-              <h3>{topic.title}</h3>
+            <div className={styles.message} key={message.message_id}>
+              <h3 className={styles.topic} onClick={() => history.push(`/topic/${message.topic_id}`, { topic }
+              )}>{topic.title}</h3>
               <Message message={message} />
             </div>
           );

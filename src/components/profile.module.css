@@ -13,11 +13,12 @@
   justify-content: space-evenly;
 }
 
-.message {
-  cursor: pointer;
-}
-
 .title {
   margin: 1rem;
   text-align: center;
+}
+
+.topic {
+  cursor: pointer;
+  width: fit-content;
 }
