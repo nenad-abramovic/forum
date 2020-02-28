@@ -4,14 +4,12 @@
 }
 
 .link {
-  color: rgb(66, 161, 250);
-  margin-right: 0.7em;
-  padding: 0.6em;
   display: inline-block;
+  padding: 0.6rem;
   text-decoration: none;
 }
 
 .link:hover {
-  text-shadow: 0 0 10px rgb(66, 161, 250);
+  text-shadow: 0 0 0.5rem rgb(66, 161, 250);
   transform: scale(1.2);
 }
