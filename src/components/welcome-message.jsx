@@ -8,7 +8,7 @@ const WelcomeMessage = () => {
         Форум
       </h1>
       <br />
-      <p className={styles.text}>Добродош'о на форум.</p>
+      <p className={styles.text}>Добродошао на форум.</p>
       <p className={styles.text}>Овде можеш наћи разне теме.</p>
       <p className={styles.text}>Оне које те интересују и оне друге.</p>
       <p className={styles.text}>Укључи се у расправу.</p>

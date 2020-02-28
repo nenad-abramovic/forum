@@ -68,12 +68,15 @@ const TopicList = () => {
   return (
     <section className={styles.topicList}>
       <div className={styles.controls}>
-        <select onChange={handleChange}>
-          <option value="date-created">Date Created</option>
-          <option value="last-comment">Last Commented</option>
-          <option value="number-of-comments">Number of Comments</option>
-        </select>
-        <button onClick={handleClick}>⇅</button>
+        <h2 className={styles.title}>Теме</h2>
+        <div>
+          <select onChange={handleChange}>
+            <option value="date-created">Date Created</option>
+            <option value="last-comment">Last Commented</option>
+            <option value="number-of-comments">Number of Comments</option>
+          </select>
+          <button onClick={handleClick}>⇅</button>
+        </div>
       </div>
       <table>
         <thead>

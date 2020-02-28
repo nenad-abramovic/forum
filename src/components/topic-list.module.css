@@ -61,5 +61,11 @@ button {
 }
 
 .controls {
-  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem;
+}
+
+.title {
+  display: inline-block;
 }
