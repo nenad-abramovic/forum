@@ -93,12 +93,12 @@ const TopicList = () => {
             topics.map(topic => (
               <tr key={topic.topic_id} onClick={() => history.push(`/topic/${topic.topic_id}`, { topic })}>
                 <td>{topic.title.toString()}</td>
-                <td>{new Date(topic.timestamp).toLocaleString()}</td>
+                <td>{new Date(topic.timestamp).toLocaleString('sr-rs')}</td>
                 <td>{topic.last_message.username}<br />
                   {
                     new Date(topic.last_message.timestamp).toLocaleString() === 'Invalid Date'
                       ? 'Нема порука'
-                      : new Date(topic.first_message.timestamp).toLocaleString()
+                      : new Date(topic.first_message.timestamp).toLocaleString('sr-rs')
                   }
                 </td>
                 <td>{topic.no_of_messages}</td>
@@ -106,7 +106,7 @@ const TopicList = () => {
                   {
                     new Date(topic.first_message.timestamp).toLocaleString() === 'Invalid Date'
                       ? 'Нема порука'
-                      : new Date(topic.first_message.timestamp).toLocaleString()
+                      : new Date(topic.first_message.timestamp).toLocaleString('sr-rs')
                   }
                 </td>
               </tr>
