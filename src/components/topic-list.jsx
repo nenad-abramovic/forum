@@ -10,9 +10,9 @@ const TopicList = () => {
   async function f() {
     let data = await getAllTopics();
     let messages = await getAllMessages();
-    if (data.success === true) {
+    if (data.success) {
       let tmp = data.topics.map(topic => {
-        if (messages.success === true) {
+        if (messages.success) {
           let topicMessages = messages.data.filter(msg => msg.topic_id === topic.topic_id);
           topicMessages = topicMessages.sort((a, b) => a.timestamp - b.timestamp);
 
@@ -70,12 +70,12 @@ const TopicList = () => {
       <div className={styles.controls}>
         <h2 className={styles.title}>Теме</h2>
         <div>
-          <select onChange={handleChange}>
-            <option value="date-created">Date Created</option>
-            <option value="last-comment">Last Commented</option>
-            <option value="number-of-comments">Number of Comments</option>
+          <select className={styles.select} onChange={handleChange}>
+            <option value="date-created">Датум објављивања</option>
+            <option value="last-comment">Последње коментарисано</option>
+            <option value="number-of-comments">Број коментара</option>
           </select>
-          <button onClick={handleClick}>⇅</button>
+          <button className={styles.button} onClick={handleClick}>⇅</button>
         </div>
       </div>
       <table>
@@ -114,7 +114,7 @@ const TopicList = () => {
           }
         </tbody>
       </table>
-    </section>
+    </section >
   );
 };
 
