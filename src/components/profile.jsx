@@ -45,12 +45,12 @@ const Profile = () => {
           <p>{userData.username}</p>
         </div>
         <div>
-          <h4>Име</h4>
-          <p>{userData.name}</p>
+          <h4>Име и презиме</h4>
+          <p>{userData.name} {userData.surname}</p>
         </div>
         <div>
-          <h4>Презиме</h4>
-          <p>{userData.surname}</p>
+          <h4>Е-маил</h4>
+          <p>{userData.email}</p>
         </div>
         <div>
           <h4>Бр. порука</h4>

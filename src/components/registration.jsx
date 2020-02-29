@@ -108,7 +108,7 @@ const Registration = () => {
       ...infoMessage,
       username: ''
     });
-  }
+  };
 
   const isEmailTaken = (e) => {
     let user = allUsers.find(({ email }) => email === e.target.value.trim());
@@ -122,10 +122,70 @@ const Registration = () => {
       ...infoMessage,
       email: ''
     });
-  }
+  };
+
+  const validateName = (name) => {
+    setUserData({ ...userData, name: name.trim() });
+    if (name.trim() === '') {
+      setInfoMessage({
+        ...infoMessage,
+        name: 'Унеси име.'
+      });
+    } else {
+      setInfoMessage({
+        ...infoMessage,
+        name: ''
+      });
+    }
+  };
+
+  const validateSurname = (surname) => {
+    setUserData({ ...userData, surname: surname.trim() });
+    if (surname.trim() === '') {
+      setInfoMessage({
+        ...infoMessage,
+        surname: 'Унеси презиме.'
+      });
+    } else {
+      setInfoMessage({
+        ...infoMessage,
+        surname: ''
+      });
+    }
+  };
+
+  const validateUsername = (username) => {
+    setUserData({ ...userData, username: username.trim() });
+    if (username.trim() === '') {
+      setInfoMessage({
+        ...infoMessage,
+        username: 'Унеси корисничко име.'
+      });
+    } else {
+      setInfoMessage({
+        ...infoMessage,
+        username: ''
+      });
+    }
+  };
+
+  const validateEmail = (email) => {
+    setUserData({ ...userData, email: email.trim() });
+    if (email.trim() === '') {
+      setInfoMessage({
+        ...infoMessage,
+        email: 'Унеси е-маил.'
+      });
+    } else {
+      setInfoMessage({
+        ...infoMessage,
+        email: ''
+      });
+    }
+  };
 
   const validatePassword = (password) => {
-    if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password)) {
+    if (!(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/).test(password)) {
       setInfoMessage({
         ...infoMessage,
         password: 'Неисправна шифра! Шифра мора садржати једно мало, велико слово и број и имати бар 8 карактера.'
@@ -138,6 +198,21 @@ const Registration = () => {
     }
   };
 
+  const validateConfirmPassword = (confirmPassword) => {
+    setConfirmPassword(confirmPassword.trim());
+    if (confirmPassword.trim() !== userData.password) {
+      setInfoMessage({
+        ...infoMessage,
+        confirmPassword: 'Шифре нису исте.'
+      });
+    } else {
+      setInfoMessage({
+        ...infoMessage,
+        confirmPassword: ''
+      });
+    }
+  };
+
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <h2 className={styles.title}>Придружи се</h2>
@@ -145,20 +220,20 @@ const Registration = () => {
         Име: <span className={styles.infoMessage}>{infoMessage.name}</span>
       </label>
       <br />
-      <input className={styles.input} type="text" id="name" value={userData.name} onChange={e => setUserData({ ...userData, name: e.target.value })} />
+      <input className={styles.input} type="text" id="name" value={userData.name} onChange={e => validateName(e.target.value)} />
       <br />
       <label htmlFor="surname">
         Презиме: <span className={styles.infoMessage}>{infoMessage.surname}</span>
       </label>
       <br />
-      <input className={styles.input} type="text" id="surname" value={userData.surname} onChange={e => setUserData({ ...userData, surname: e.target.value })} />
+      <input className={styles.input} type="text" id="surname" value={userData.surname} onChange={e => validateSurname(e.target.value)} />
       <br />
       <label htmlFor="username">
         Корисничко име: <span className={styles.infoMessage}>{infoMessage.username}</span>
       </label>
       <br />
       <input className={styles.input} type="text" id="username" value={userData.username} onChange={e => {
-        setUserData({ ...userData, username: e.target.value });
+        validateUsername(e.target.value);
         isUsernameTaken(e);
       }} />
       <br />
@@ -167,7 +242,7 @@ const Registration = () => {
       </label>
       <br />
       <input className={styles.input} type="email" id="email" value={userData.email} onChange={e => {
-        setUserData({ ...userData, email: e.target.value });
+        validateEmail(e.target.value);
         isEmailTaken(e);
       }} />
       <br />
@@ -181,7 +256,9 @@ const Registration = () => {
         Понови шифру: <span className={styles.infoMessage}>{infoMessage.confirmPassword}</span>
       </label>
       <br />
-      <input className={styles.input} type="password" id="confirm-password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value.trim())} />
+      <input className={styles.input} type="password" id="confirm-password" value={confirmPassword} onChange={e => {
+        validateConfirmPassword(e.target.value);
+      }} />
       <br />
       <input className={styles.button} type="submit" value="Региструј се!" />
     </form>

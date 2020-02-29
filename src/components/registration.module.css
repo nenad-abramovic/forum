@@ -1,10 +1,10 @@
 .form {
   background-color: rgb(22, 22, 22);
-  padding: 1em;
-  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.20);
+  border-radius: 0.5rem;
   flex: 1;
   margin: 0.5rem;
+  padding: 1rem;
 }
 
 .title {
@@ -12,21 +12,21 @@
 }
 
 .infoMessage {
-  font-size: 0.8em;
+  font-size: 0.8rem;
 }
 
 .button:hover {
-  cursor: pointer;
   background-color: rgba(66, 161, 250, 0.29);
+  cursor: pointer;
 }
 
 .input,
 .button {
+  background-color: transparent;
   border: 1px solid rgb(66, 161, 250);
   color: rgb(66, 161, 250);
-  background-color: transparent;
-  padding: 0.5rem;
-  margin-right: 0.5rem;
   margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 0.5rem;
   width: 100%;
 }
