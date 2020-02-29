@@ -7,7 +7,7 @@ import Footer from './layout/footer';
 
 function App() {
   return (
-    <BrowserRouter basename="/forum/">
+    <BrowserRouter>
       <Header />
       <Content />
       <Footer />
